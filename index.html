@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons(); // Inicializa los íconos de Lucide
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Real Madrid - Proyecto Universitario</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <canvas id="rainCanvas" class="rain-effect"></canvas>
+
+    <!-- 3D Soccer Ball -->
+    <div class="soccer-ball-3d">
+        <div class="ball">
+            <div class="ball-panels">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="ball-shadow"></div>
+    </div>
+
+    <!-- Real Madrid Badge -->
+    <div class="real-madrid-badge">
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid Badge">
+    </div>
+
+    <!-- Champions Trophy -->
+    <div class="champions-trophy">
+        <i data-lucide="trophy" class="trophy-big"></i>
+        <div class="trophy-glow"></div>
+        <div class="trophy-sparkles">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!-- DNA Animation -->
+    <div class="dna-animation">
+        <div class="dna-helix">
+            <div class="dna-strand"></div>
+            <div class="dna-strand"></div>
+            <div class="dna-strand"></div>
+            <div class="dna-strand"></div>
+            <div class="dna-strand"></div>
+        </div>
+    </div>
+
+    <div class="gradient-bg">
+        <!-- Líneas de neón -->
+        <div class="neon-lines">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+        </div>
+
+        <!-- Partículas interactivas -->
+        <div id="particles"></div>
+        <div class="container">
+            <!-- Sección de Perfil -->
+            <div class="profile-section">
+                <div class="profile-image-container">
+                    <img src="logo.jpg" 
+                         alt="Profile" 
+                         class="profile-image">
+                    <i data-lucide="bot" class="robot-icon"></i>
+                    <div class="hologram-effect"></div>
+                    <div class="cyber-circles">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+                <h1 class="rainbow-text cyberpunk">Juan Diego Contreras</h1>
+
+                <!-- Champions Stars -->
+                <div class="champions-stars">
+                    <div class="stars-container">
+                        <!-- 15 trofeos de Champions -->
+                        <div class="trophy-container" data-title="La Primera (1956)">
+                            <i data-lucide="trophy" class="trophy-icon"></i>
+                        </div>
+                        <div class="trophy-container" data-title="La Segunda (1957)">
+                            <i data-lucide="trophy" class="trophy-icon"></i>
+                        </div>
+                        <div class="trophy-container" data-title="La Tercera (1958)">
+                            <i data-lucide="trophy" class="trophy-icon"></i>
+                        </div>
+                        <div class="trophy-container" data-title="La Cuarta (1959)">
+                            <i data-lucide="trophy" class="trophy-icon"></i>
+                        </div>
+                        <div class="trophy-container" data-title="La Quinta (1960)">
+                            <i data-lucide="trophy" class="trophy-icon"></i>
+                        </div>
+                        <div class="trophy-container" data-title="La Sexta (1966)">
+                            <i data-lucide="trophy" class="trophy-icon"></i>
+                        </div>
+                        <div class="trophy-container" data-title="La Séptima (1998)">
+                            <i data-lucide="trophy" class="trophy-icon"></i>
+                        </div>
+                        <div class="trophy-container" data-title="La Octava (2000)">
+                            <i data-lucide="trophy" class="trophy-icon"></i>
+                        </div>
+                        <div class="trophy-container" data-title="La Novena (2002)">
+                            <i data-lucide="trophy" class="trophy-icon"></i>
+                        </div>
+                        <div class="trophy-container" data-title="La Décima (2014)">
+                            <i data-lucide="trophy" class="trophy-icon"></i>
+                        </div>
+                        <div class="trophy-container" data-title="La Undécima (2016)">
+                            <i data-lucide="trophy" class="trophy-icon"></i>
+                        </div>
+                        <div class="trophy-container" data-title="La Duodécima (2017)">
+                            <i data-lucide="trophy" class="trophy-icon"></i>
+                        </div>
+                        <div class="trophy-container" data-title="La Decimotercera (2018)">
+                            <i data-lucide="trophy" class="trophy-icon"></i>
+                        </div>
+                        <div class="trophy-container" data-title="La Decimocuarta (2022)">
+                            <i data-lucide="trophy" class="trophy-icon"></i>
+                        </div>
+                        <div class="trophy-container" data-title="La Decimoquinta (2024)">
+                            <i data-lucide="trophy" class="trophy-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="profile-description neon-text">
+                    Intento de desarrollador. Especializado en crear vainas digitales como esta.
+                </p>
+
+                <div class="tech-pills">
+                    <span class="tech-pill">React</span>
+                    <span class="tech-pill">Node.js</span>
+                    <span class="tech-pill">Real Madrid</span>
+                    <span class="tech-pill">Champions League</span>
+                    <span class="tech-pill">TypeScript</span>
+                </div>
+            </div>
+
+            <!-- Social Links con efectos holográficos -->
+<div class="social-links">
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/juan_diego305/" class="social-link hologram-container" target="_blank">
+        <div class="icon-container">
+            <i data-lucide="instagram"></i>
+            <i data-lucide="cpu" class="mini-robot robot-animation"></i>
+            <div class="hologram-ring"></div>
+        </div>
+    </a>
+
+    <!-- GitHub -->
+    <a href="https://github.com/juandiego305" class="social-link hologram-container" target="_blank">
+        <div class="icon-container">
+            <i data-lucide="github"></i>
+            <i data-lucide="terminal" class="mini-robot robot-animation"></i>
+            <div class="hologram-ring"></div>
+        </div>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/juan-diego-contreras-garc%C3%ADa-08a698312?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link hologram-container" target="_blank">
+        <div class="icon-container">
+            <i data-lucide="linkedin"></i>
+            <i data-lucide="code" class="mini-robot robot-animation"></i>
+            <div class="hologram-ring"></div>
+        </div>
+    </a>
+
+    <!-- Facebook -->
+<a href="https://www.facebook.com/juandiego.contrerasgarcia" class="social-link hologram-container" target="_blank">
+    <div class="icon-container">
+        <i data-lucide="facebook"></i> <!-- Ícono de Facebook -->
+        <i data-lucide="server" class="mini-robot robot-animation"></i>
+        <div class="hologram-ring"></div>
+    </div>
+</a>
+<!-- Spotify -->
+<a href="https://open.spotify.com/user/31neirnifhiug6xvsx3ljzjklkqm?si=2d5d726475284bb7" class="social-link hologram-container" target="_blank">
+    <div class="icon-container">
+        <i class="fab fa-spotify"></i> <!-- Ícono de Spotify desde FontAwesome -->
+        <i data-lucide="headphones" class="mini-robot robot-animation"></i> <!-- Ícono de auriculares -->
+        <div class="hologram-ring"></div>
+    </div>
+</a>
+
+</div>
+
+            <!-- Proyectos con nuevo diseño -->
+            <h2 class="section-title rainbow-text">Proyectos </h2>
+            <div class="projects-grid">
+                <div class="project-card cyber-card">
+                    <div class="card-glitch"></div>
+                    <i data-lucide="trophy" class="card-icon"></i>
+                    <h3 class="neon-text">Hamburguesas</h3>
+                    <p>Análisis táctico y visualización de datos del histórico partido que nos dio la 10ª Champions.</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Clasica</span>
+                        <span class="tech-pill">Doble</span>
+                        <span class="tech-pill">Vegana</span>
+                    </div>
+                    <a href="https://html-y-css-2.vercel.app/" class="project-link ">
+                        Ver proyecto
+                        <i data-lucide="external-link" class="link-icon"></i>
+                    </a>
+                </div>
+
+                <div class="project-card cyber-card">
+                    <div class="card-glitch"></div>
+                    <!-- Ícono de balón de fútbol en SVG -->
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 22s-4-2-4-6c0-2 1.5-3 4-3s4 1 4 3c0 4-4 6-4 6z" />
+                        <path d="M12 2s4 2 4 6c0 2-1.5 3-4 3s-4-1-4-3c0-4 4-6 4-6z" />
+                    </svg>
+                    <h3 class="neon-text">Intento de hoja de vida </h3>
+                    <p>Una de las primeras cosas que realice</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Html</span>
+                        <span class="tech-pill">Css</span>
+                        <span class="tech-pill">Js</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        Ver proyecto
+                        <i data-lucide="external-link" class="link-icon"></i>
+                    </a>
+                </div>
+                <div class="project-card cyber-card">
+                    <div class="card-glitch"></div>
+                    <i data-lucide="home" class="card-icon"></i>
+                    <h3 class="neon-text">Bernabéu Virtual</h3>
+                    <p>Tour virtual 3D del Santiago Bernabéu con tecnología WebGL.</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill">3D</span>
+                        <span class="tech-pill">Virtual</span>
+                        <span class="tech-pill">Stadium</span>
+                    </div>
+                    <a href="https://www.realmadrid.com/es-ES/santiago-bernabeu" class="project-link">
+                        Ver proyecto
+                        <i data-lucide="external-link" class="link-icon"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sección de Contacto -->
+            <div class="contact-section cyber-section">
+                <i data-lucide="bot" class="contact-icon"></i>
+                <h2 class="rainbow-text">¿Para que es esto?</h2>
+                <p class="neon-text">
+                    Tamo activo rey.
+                </p>
+                <a href="mailto:tu@email.com" class="contact-button">
+                    ¡JEJEJE!
+                    <div class="button-glow"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+
+        // Efecto de lluvia
+        const canvas = document.getElementById('rainCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const drops = [];
+        const dropCount = Math.floor(window.innerWidth / 5);
+
+        for (let i = 0; i < dropCount; i++) {
+            drops.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                speed: 15 + Math.random() * 10,
+                length: 10 + Math.random() * 20
+            });
+        }
+
+        function animate() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.strokeStyle = 'rgba(174, 174, 174, 0.3)';
+            ctx.lineWidth = 1;
+
+            drops.forEach(drop => {
+                ctx.beginPath();
+                ctx.moveTo(drop.x, drop.y);
+                ctx.lineTo(drop.x, drop.y + drop.length);
+                ctx.stroke();
+
+                drop.y += drop.speed;
+
+                if (drop.y > canvas.height) {
+                    drop.y = -drop.length;
+                    drop.x = Math.random() * canvas.width;
+                }
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Partículas interactivas
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particles.appendChild(particle);
+            }
+        }
+
+        createParticles();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>

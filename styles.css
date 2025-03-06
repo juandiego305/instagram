@@ -1,0 +1,676 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: white;
+    overflow-x: hidden;
+    background: #1a1a1a;
+}
+
+/* Efecto de lluvia */
+.rain-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+/* Real Madrid Badge */
+.real-madrid-badge {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+    animation: floatBadge 3s ease-in-out infinite;
+}
+
+.real-madrid-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Fondo y efectos principales */
+.gradient-bg {
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #1a1a1a, #2a2a2a, #1a1a1a, #2d3748);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    position: relative;
+    padding: 2rem;
+}
+
+.gradient-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(74, 222, 128, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Líneas de neón */
+.neon-lines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.line {
+    position: absolute;
+    background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.2), transparent);
+    height: 2px;
+    width: 100%;
+    animation: neonPulse 3s ease-in-out infinite;
+}
+
+.line-1 { top: 20%; animation-delay: 0s; }
+.line-2 { top: 50%; animation-delay: 1s; }
+.line-3 { top: 80%; animation-delay: 2s; }
+
+/* Sección de perfil */
+.profile-section {
+    text-align: center;
+    margin-bottom: 5rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 1s ease-out;
+}
+
+.profile-image-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.profile-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid rgba(74, 222, 128, 0.3);
+    animation: glow 3s ease-in-out infinite;
+}
+
+/* Champions Stars */
+.champions-stars {
+    margin: 2rem 0;
+}
+
+.stars-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.trophy-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.trophy-icon {
+    width: 24px;
+    height: 24px;
+    color: #ffd700;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.trophy-container:hover .trophy-icon {
+    transform: scale(1.2);
+}
+
+.trophy-container::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+.trophy-container:hover::after {
+    transform: translateX(-50%) scale(1);
+}
+
+/* Enlaces sociales */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 5rem;
+}
+
+.social-link {
+    position: relative;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.icon-container {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-container svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover svg {
+    transform: scale(1.2);
+    color: #4ade80;
+}
+
+.hologram-ring {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid rgba(74, 222, 128, 0.3);
+    border-radius: 50%;
+    animation: hologramRing 4s linear infinite;
+}
+
+/* Proyectos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.project-card {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(74, 222, 128, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    color: #4ade80;
+    margin-bottom: 1.5rem;
+}
+
+/* Tech Pills */
+.tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    justify-content: center;
+}
+
+.tech-pill {
+    padding: 0.5rem 1rem;
+    background: rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: #4ade80;
+    transition: all 0.3s ease;
+}
+
+.tech-pill:hover {
+    background: rgba(74, 222, 128, 0.2);
+    transform: scale(1.05);
+}
+
+/* Textos y efectos */
+.rainbow-text {
+    background: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    animation: rainbowText 10s linear infinite;
+}
+
+.neon-text {
+    color: #4ade80;
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.5),
+                 0 0 20px rgba(74, 222, 128, 0.3);
+}
+
+/* Sección de contacto */
+.contact-section {
+    text-align: center;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 5rem;
+}
+
+.contact-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #4ade80, #3b82f6);
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+.contact-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.3);
+}
+
+/* 3D Soccer Ball */
+.soccer-ball-3d {
+    position: fixed;
+    top: 20%;
+    left: 5%;
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    z-index: 10;
+}
+
+.ball {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateBall 8s linear infinite;
+}
+
+.ball-panels {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.ball-panels span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #fff, #e0e0e0);
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+
+.ball-panels span:nth-child(1) { transform: rotateY(0deg) translateZ(50px); }
+.ball-panels span:nth-child(2) { transform: rotateY(60deg) translateZ(50px); }
+.ball-panels span:nth-child(3) { transform: rotateY(120deg) translateZ(50px); }
+.ball-panels span:nth-child(4) { transform: rotateY(180deg) translateZ(50px); }
+.ball-panels span:nth-child(5) { transform: rotateY(240deg) translateZ(50px); }
+.ball-panels span:nth-child(6) { transform: rotateY(300deg) translateZ(50px); }
+
+.ball-shadow {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    transform: rotateX(90deg);
+    filter: blur(5px);
+    animation: shadowPulse 2s ease-in-out infinite;
+}
+
+/* Champions Trophy */
+.champions-trophy {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+.trophy-big {
+    width: 100px;
+    height: 100px;
+    color: #ffd700;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+    animation: floatTrophy 3s ease-in-out infinite;
+}
+
+.trophy-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+.trophy-sparkles span {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ffd700;
+    border-radius: 50%;
+    animation: sparkle 2s linear infinite;
+}
+
+/* DNA Animation */
+.dna-animation {
+    position: fixed;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 200px;
+    z-index: 1;
+}
+
+.dna-helix {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotateDNA 10s linear infinite;
+}
+
+.dna-strand {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(74, 222, 128, 0.5);
+    border-radius: 50%;
+    animation: pulseDNA 2s ease-in-out infinite;
+}
+
+/* Cyber Effects */
+.cyber-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-border {
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    background: linear-gradient(45deg, #4ade80, #3b82f6, #4ade80);
+    background-size: 200% 200%;
+    animation: borderGlow 3s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.cyber-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-glitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 45%, rgba(74, 222, 128, 0.5) 50%, transparent 55%);
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.cyber-card:hover .card-glitch {
+    opacity: 1;
+    animation: glitchEffect 1s infinite;
+}
+
+/* Particle System */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(74, 222, 128, 0.5);
+    border-radius: 50%;
+    animation: particleFloat 5s linear infinite;
+}
+
+/* Animaciones */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatBadge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(74, 222, 128, 0.5); }
+    50% { box-shadow: 0 0 40px rgba(74, 222, 128, 0.8); }
+}
+
+@keyframes hologramRing {
+    0% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+    50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+    100% { transform: scale(1) rotate(360deg); opacity: 0.5; }
+}
+
+@keyframes rainbowText {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes neonPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+@keyframes rotateBall {
+    from { transform: rotateY(0deg) rotateX(30deg); }
+    to { transform: rotateY(360deg) rotateX(30deg); }
+}
+
+@keyframes shadowPulse {
+    0%, 100% { transform: rotateX(90deg) scale(1); opacity: 0.2; }
+    50% { transform: rotateX(90deg) scale(1.2); opacity: 0.4; }
+}
+
+@keyframes floatTrophy {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes sparkle {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes rotateDNA {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+@keyframes pulseDNA {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
+
+@keyframes glitchEffect {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes particleFloat {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes borderGlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .real-madrid-badge {
+        width: 60px;
+        height: 60px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .rainbow-text {
+        font-size: 2rem;
+    }
+
+    .social-links {
+        gap: 1.5rem;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .tech-pills {
+        justify-content: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stars-container {
+        gap: 0.5rem;
+    }
+
+    .trophy-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .soccer-ball-3d {
+        width: 60px;
+        height: 60px;
+        top: 10%;
+    }
+
+    .champions-trophy {
+        transform: scale(0.7);
+    }
+
+    .dna-animation {
+        display: none;
+    }
+
+    .cyber-card {
+        margin: 1rem 0;
+    }
+}
+
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+.card-icon {
+    width: 48px; /* Tamaño del ícono */
+    height: 48px;
+    color: #4ade80; /* Color del ícono */
+    margin-bottom: 1rem; /* Espacio debajo del ícono */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.card-icon:hover {
+    transform: rotate(360deg); /* Gira el ícono al pasar el mouse */
+    color: #3b82f6; /* Cambia el color al pasar el mouse */
+}
+
+/* High-performance animations */
+@media (prefers-reduced-motion: no-preference) {
+    .cyber-effect,
+    .cyber-card,
+    .ball,
+    .trophy-big {
+        will-change: transform;
+    }
+}
